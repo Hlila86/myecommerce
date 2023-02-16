@@ -1,3 +1,24 @@
 .container{
-    
+    background-color: bisque;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    flex: 1;
+    background-color: beige;
+}
+
+.menu{
+    flex: 2;
+    background-color: blueviolet;
+}
+
+.right{
+    flex: 1;
+    background-color: brown;
 }

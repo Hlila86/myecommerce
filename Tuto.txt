@@ -1,0 +1,8 @@
+
+
+//title configuration :
+change layout header title : <title>{title? title+ '-MyEcommerce':'MyEcommerce'}</title>
+change .eslintrc.json :   "extends": ["eslint:recommended","next/core-web-vitals"]
+defined title in fct params : Layout = ({title , children})
+
+in index change compo  <Layout title="Home"> you will get home-MyEcommerce
