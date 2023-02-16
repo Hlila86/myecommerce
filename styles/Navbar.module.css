@@ -23,3 +23,11 @@
     flex: 1;
     background-color: brown;
 }
+
+.cartBag{
+    background-color: rgb(54, 36, 213);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+
+}

@@ -1,8 +1,11 @@
 import Link from 'next/link'
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from '../styles/Navbar.module.css'
+import { Store } from '@/utils/Store'
 
 const Navbar = () => {
+    const {state , dispatch} = useContext(Store);
+    const {cart} = state;
     return (
         <div className={styles.container}>
             <nav className={styles.nav}>
@@ -18,7 +21,14 @@ const Navbar = () => {
 
                 <div className={styles.right}>
                 <Link href="/login">Login</Link>
-                <Link href="/cart">Cart</Link>
+                <Link href="/cart">Cart
+                {cart.cartItems.lenght > 0 && (
+                 <span className={styles.cartBag}>
+                    {cart.cartItems.reduce((a,c) => a + c.quantity, 0)}
+                 </span>
+                )}
+                
+                </Link>
 
 
                 </div>
