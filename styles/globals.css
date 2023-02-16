@@ -103,3 +103,13 @@ a {
     color-scheme: dark;
   }
 }
+
+
+.btn{
+  padding: 12px 35px;
+  text-transform: capitalize;
+  background-color: #ff324d;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  border: 1px solid #ff324d;
+}

@@ -1,0 +1,39 @@
+.container {
+    height: 100vh;
+    display: flex;
+    margin: 50px;
+}
+
+.left {
+    flex: 1;
+    background-color: aquamarine;
+    padding: 30px;
+}
+
+.imgContainer{
+    width: 500px;
+    height: 500px;
+    background-color: brown;
+}
+
+.imgContainer img{
+    width: 200px;
+}
+
+.smallImages{
+display: flex;
+background-color: blueviolet;
+width: 70%;
+
+}
+
+.smallImage{
+    width: 25%;
+    height: 50%;
+}
+
+
+.right {
+    flex: 1;
+    padding: 30px;
+}
