@@ -1,3 +1,38 @@
 .container{
     background-color: rgb(63, 59, 59);
+    display: flex;
+    height: 100vh;
+}
+
+.left{
+    flex: 2;
+    background-color: aliceblue;
+}
+
+.table{
+    width: 100%;
+    padding: 40px;
+}
+
+.tableRow{
+    border-bottom: 1px solid rgb(218, 77, 77);
+    background-color: azure;
+    text-align: center;
+}
+
+.remove{
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+.right{
+    flex: 1;
+    background-color: yellowgreen;
+}
+
+
+.image img{
+    width: 30px;
+    height: 40px;
 }

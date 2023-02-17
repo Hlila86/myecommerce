@@ -10,3 +10,22 @@ in index change compo  <Layout title="Home"> you will get home-MyEcommerce
 
 
 npm i -D @types/react
+
+
+
+option in select box is a string , we must to convert it to number :
+const quantity = Number(qty);
+
+
+//reduce 
+const array1 = [1, 2, 3, 4];
+
+// 0 + 1 + 2 + 3 + 4
+const initialValue = 0;
+const sumWithInitial = array1.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  initialValue
+);
+
+console.log(sumWithInitial);
+// Expected output: 10

@@ -6,6 +6,7 @@ import styles from '../styles/Cart.module.css'
 import {AiOutlineDelete} from 'react-icons/ai'
 import { useRouter } from 'next/router';
 
+
 const CartScreen = () => {
     const router = useRouter();
     const { state, dispatch } = useContext(Store);
@@ -16,18 +17,23 @@ const CartScreen = () => {
     const removeItemHandler = (item) =>{
         dispatch( {type: 'CART_REMOVE_ITEM' , payload: item})
     }
+
+    const updateCartHandler = (item , qty) => {
+        const quantity = Number(qty);
+        dispatch({type: 'CART_ADD_ITEM' , payload:{...item, quantity}})
+    }
     return (
 
         <Layout title='Shoping Cart'>
-            <div className={styles.container}>cart</div>
+            
             {
                 cartItems.length === 0 ?
                     (<div>
                         Cart is Empty <Link href="/">Go shoping store</Link>
                     </div>) : (
-                        <div>
-                            <div>
-                                <table>
+                        <div className={styles.container}>
+                            <div className={styles.left}>
+                                <table className={styles.table}>
                                     <thead>
                                         <tr>
                                             <th>Item</th>
@@ -41,9 +47,9 @@ const CartScreen = () => {
 
                                     <tbody>
                                         {cartItems.map((item)=>(
-                                            <tr key={item._slug}>
+                                            <tr key={item._slug} className={styles.tableRow}>
                                                 <td>
-                                                    <Link href={`/product/${item.slug}`}>
+                                                    <Link href={`/product/${item.slug}`} className={styles.image}>
                                                         <img 
                                                         src={item.image}
                                                         alt={item.name}
@@ -54,10 +60,22 @@ const CartScreen = () => {
                                                     </Link>
                                                 </td>
 
-                                                <td>{item.quantity}</td>
+                                                <td>
+
+                                                    <select value={item.quantity} onChange={(e) => updateCartHandler(item , e.target.value)}>
+
+                                                    {
+                                                        [...Array(item.countInStock).keys()].map(x =>(
+                                                            <option key={x+1} value={x+1}>{x+1}</option>
+                                                        ) )
+                                                    }
+                                                    </select>
+      
+
+                                                </td>
                                                 <td>${item.price}</td>
                                                 <td>
-                                                    <button onClick={() => removeItemHandler(item)}>
+                                                    <button onClick={() => removeItemHandler(item)} className={styles.remove}>
                                                         <AiOutlineDelete />
                                                     </button>
                                                 </td>
@@ -70,7 +88,7 @@ const CartScreen = () => {
                                     </tbody>
                                 </table>
                             </div>
-                            <div>
+                            <div className={styles.right}>
                                 <ul>
                                     <li>
                                         <div>Subtotal ({cartItems.reduce((a,c) => a + c.quantity , 0)})

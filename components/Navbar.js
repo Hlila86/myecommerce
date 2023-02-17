@@ -23,7 +23,7 @@ const Navbar = () => {
                 <Link href="/login">Login</Link>
                 <Link href="/cart">Cart
                 {cart.cartItems.lenght > 0 && (
-                 <span className={styles.cartBag}>
+                 <span class="cartBag">
                     {cart.cartItems.reduce((a,c) => a + c.quantity, 0)}
                  </span>
                 )}
