@@ -3,11 +3,11 @@ import { Store } from '@/utils/Store';
 import Link from 'next/link';
 import React, { useContext } from 'react'
 import styles from '../styles/Cart.module.css'
-import {AiOutlineDelete} from 'react-icons/ai'
+import {MdOutlineDelete} from 'react-icons/md'
 import { useRouter } from 'next/router';
+import dynamic from 'next/dynamic';
 
-
-const CartScreen = () => {
+function CartScreen () {
     const router = useRouter();
     const { state, dispatch } = useContext(Store);
     const {
@@ -76,7 +76,7 @@ const CartScreen = () => {
                                                 <td>${item.price}</td>
                                                 <td>
                                                     <button onClick={() => removeItemHandler(item)} className={styles.remove}>
-                                                        <AiOutlineDelete />
+                                                        <MdOutlineDelete />
                                                     </button>
                                                 </td>
 
@@ -112,4 +112,4 @@ const CartScreen = () => {
     )
 }
 
-export default CartScreen
+export default dynamic(()=> Promise.resolve(CartScreen), {ssr:false}) 

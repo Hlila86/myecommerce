@@ -29,3 +29,13 @@ const sumWithInitial = array1.reduce(
 
 console.log(sumWithInitial);
 // Expected output: 10
+
+
+//
+
+npm i js-cookie
+go to store.js and add :
+import Cookies from "js-cookie";
+
+add thi line to .eslintrc.json :
+ "env":{"browser": true, "node": true, "es6":true}
