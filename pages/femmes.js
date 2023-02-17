@@ -1,16 +1,15 @@
 import Layout from '@/components/Layout'
 import React from 'react'
 
-const hommes = () => {
+const femmes = () => {
   return (
 
-    <Layout title="Hommes">
+    <Layout title="Femmes">
 
+            <div>femmes</div>
 
-       <div>hommes</div>
     </Layout>
-   
   )
 }
 
-export default hommes
+export default femmes

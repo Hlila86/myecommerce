@@ -7,6 +7,7 @@ import styles from '../../styles/Product.module.css'
 
 const Product = () => {
     const {state , dispatch} = useContext(Store);
+    const router = useRouter();
     const {query} = useRouter();
     const {slug} = query;
     const product = data.products.find(x => x.slug === slug)
@@ -18,6 +19,7 @@ const Product = () => {
         const existItem = state.cart.cartItems.find((x) => x.flug === product.slug);
         const quantity = existItem ? existItem.quantity + 1 : 1;
 dispatch({ type: 'CART_ADD_ITEM' , payload: {...product , quantity }})
+router.push('/cart')
     }
   return (
 <Layout title={product.name}>
