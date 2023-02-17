@@ -119,6 +119,7 @@ a {
   background-color: rgb(54, 36, 213);
   width: 35px;
   height: 35px;
+  padding: 5px;
   border-radius: 50%;
 
 }

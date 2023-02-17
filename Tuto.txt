@@ -39,3 +39,11 @@ import Cookies from "js-cookie";
 
 add thi line to .eslintrc.json :
  "env":{"browser": true, "node": true, "es6":true}
+
+
+ create login from
+ install react hook from : npm i react-hook-form
+ create input boxes
+ add login button
+
+  Don&apos;t have an account ? &nbsp;

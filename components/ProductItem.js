@@ -19,7 +19,7 @@ const ProductItem = ({ product }) => {
 
            <p className={styles.brand}>{product.brand}</p>
            <p className={styles.price}>${product.price}</p>
-           <button className={styles.button} type="button" class="btn">
+           <button  type="button" className="btn">
             Add To Card
            </button>
 
