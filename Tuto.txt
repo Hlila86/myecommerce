@@ -47,3 +47,12 @@ add thi line to .eslintrc.json :
  add login button
 
   Don&apos;t have an account ? &nbsp;
+
+  regula expression to xheck email:
+  pattern:{
+            value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/i,
+            message:'Please enter valid email '
+          }
+
+{/* show error message from useform*/}
+          {errors.email && (<div>{errors.email.message} </div>)}

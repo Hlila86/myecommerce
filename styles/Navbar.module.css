@@ -1,12 +1,16 @@
 .container{
     background-color: bisque;
     height: 80px;
+   
+	
 }
 
 .nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
+ 
+
 }
 
 .logo{

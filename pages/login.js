@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 const loginScreen = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const submitHandler = ({email,password}) =>{
-
+       console.log(email,password);
     }
   return (
     <Layout title="Login">
@@ -16,13 +16,29 @@ const loginScreen = () => {
         <div>
           <label htmlFor="email">Email</label>
           <input type="email" 
-          {...register('email', {required: 'please enter email'})}
+          {...register('email', {required: 'please enter email',
+          pattern:{
+            value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/i,
+            message:'Please enter valid email '
+          }
+        
+        })}
           id="email" autoFocus></input>
+          {/* show error message from useform*/}
           {errors.email && (<div>{errors.email.message} </div>)}
         </div>
         <div>
           <label htmlFor="password">Password</label>
-          <input type="password" id="password" autoFocus></input>
+          <input type="password" 
+          {...register('password',{
+            required:'please enter password',
+            minLength:{value:6 , message: 'password must be more than 5 chars'}
+          })}
+          
+          id="password" autoFocus></input>
+          {errors.password && (
+            <div> {errors.password.message}</div>
+          )}
         </div>
         <div>
           <button>Login</button>
