@@ -56,3 +56,32 @@ add thi line to .eslintrc.json :
 
 {/* show error message from useform*/}
           {errors.email && (<div>{errors.email.message} </div>)}
+
+
+//database :
+
+create .env filter
+install mongoose : npm i mongoose
+
+import bcrypt from 'bcryptjs'
+const data :
+    users: [
+         {
+            name: 'john',
+            email: 'admin@exemple.com',
+            password: bcrypt.hashSync('123456'),
+            isAdmin: true,
+         }
+    ],
+
+// in terminal :
+npm i bcryptjs
+
+// create seed.js file in api folder and insert :
+import db from "../../utils/db"
+
+const handler = async (req , res) =>{
+    await db.connect();
+}
+
+//create models folder in root and create there User.js file 
