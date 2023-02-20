@@ -6,6 +6,7 @@ import Head from 'next/head'
 import ProductsList from '@/components/ProductsList'
 import Slider from '../components/Slider'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Categories from '@/components/Categories'
 
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
 <Layout>
 <Slider />
 
+<Categories />
 <div >
 <ProductsList />
 
