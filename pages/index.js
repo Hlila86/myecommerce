@@ -4,6 +4,8 @@ import { Inter } from '@next/font/google'
 import Layout from '@/components/Layout'
 import Head from 'next/head'
 import ProductsList from '@/components/ProductsList'
+import Slider from '../components/Slider'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 export default function Home() {
@@ -11,6 +13,7 @@ export default function Home() {
     <>
 
 <Layout>
+<Slider />
 
 <div >
 <ProductsList />

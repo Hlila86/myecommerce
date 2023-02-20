@@ -1,0 +1,23 @@
+.container{
+    padding: 10px;
+
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider{
+    height: 50%;
+    width: 100%;
+
+}
+
+.item{
+    height: 100%;
+}
+
+.item img{
+    width: 1700px;
+    height: 588px;
+
+}
